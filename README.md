@@ -33,35 +33,38 @@ As the **Database Developer**, I re-architected the entire backend data layer in
 
 ## 🗂️ Repository Structure
 
-urbaneco_oracle_db/
-├── README.md # Project goals and Oracle setup
-├── config/ # Environment setup scripts
-│ └── init_env.sql # Sample Oracle environment setup
+shell
+CopyEdit
+urbaneco_db/
+├── README.md                  # Project setup and goals
+├── .env.example               # Sample environment configuration
 
-├── schema/ # 🗄️ Core Oracle schema definitions
-│ ├── users.sql # Admins, Artisans, Customers
-│ ├── artisans.sql # Skills, training status
-│ ├── products.sql # Catalog with impact metadata
-│ ├── orders.sql # Orders and itemized purchases
-│ ├── waste_logs.sql # Smart bin tracking schema
-│ ├── subscriptions.sql # Monthly EcoBox plans
-│ ├── trainings.sql # Training sessions and certs
-│ └── interaction_logs.sql # JSON interaction tracking (CLOB/JSON)
+├── schema/                    # 🗄️ Core relational schema
+│   ├── users.sql              # Users: Admins, Artisans, Customers
+│   ├── artisans.sql           # Artisan skill mapping and status
+│   ├── products.sql           # Eco-product catalog with impact data
+│   ├── orders.sql             # Orders and order_items schema
+│   ├── waste_logs.sql         # Smart bin waste tracking
+│   ├── subscriptions.sql      # Monthly EcoBox plans
+│   ├── trainings.sql          # Artisan training & certifications
+│   └── interaction_logs.sql   # Clicks, views, chat logs (JSONB)
 
-├── triggers/ # 🔄 Business logic in PL/SQL
-│ ├── trg_decrement_inventory.sql # Auto-stock reduction on order
-│ └── trg_grant_certification.sql # Auto-certify artisans
+├── triggers/                  # 🔄 Business logic automation
+│   ├── decrement_inventory.sql    # Auto-reduce stock on order
+│   └── grant_certification.sql   # Auto-certify training completion
 
-├── analytics/ # 📊 KPI dashboards
-│ ├── analytics_views.sql # Central view loader
-│ ├── vw_waste_by_month.sql # Waste tracking trends
-│ ├── vw_artisan_leaderboard.sql # Artisan performance
-│ ├── vw_product_impact_trends.sql
-│ ├── vw_active_subscriptions.sql
-│ └── vw_training_completion.sql
+├── analytics/                 # 📊 Views for KPI dashboards
+│   ├── analytics_views.sql        # Loader for all analytics
+│   ├── vw_waste_by_month.sql     # Monthly waste stats
+│   ├── vw_artisan_leaderboard.sql# Artisan revenue metrics
+│   ├── vw_product_impact_trends.sql
+│   ├── vw_active_subscriptions.sql
+│   └── vw_training_completion.sql
 
-└── seed/ # 🧪 Demo/test data
-└── sample_data.sql # Initial setup with sample data
+└── seed/                      # 🧪 Sample data
+    └── sample_data.sql        # Initial users, orders, products
+
+
 
 yaml
 Copy
