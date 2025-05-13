@@ -29,48 +29,6 @@ As the **Database Developer**, I re-architected the entire backend data layer in
 - Seeded test data to support development and demos
 - Maintained clean and modular configuration using `.sql` setup scripts
 
----
-
-## 🗂️ Repository Structure
-
-shell
-CopyEdit
-urbaneco_db/
-├── README.md                  # Project setup and goals
-├── .env.example               # Sample environment configuration
-
-├── schema/                    # 🗄️ Core relational schema
-│   ├── users.sql              # Users: Admins, Artisans, Customers
-│   ├── artisans.sql           # Artisan skill mapping and status
-│   ├── products.sql           # Eco-product catalog with impact data
-│   ├── orders.sql             # Orders and order_items schema
-│   ├── waste_logs.sql         # Smart bin waste tracking
-│   ├── subscriptions.sql      # Monthly EcoBox plans
-│   ├── trainings.sql          # Artisan training & certifications
-│   └── interaction_logs.sql   # Clicks, views, chat logs (JSONB)
-
-├── triggers/                  # 🔄 Business logic automation
-│   ├── decrement_inventory.sql    # Auto-reduce stock on order
-│   └── grant_certification.sql   # Auto-certify training completion
-
-├── analytics/                 # 📊 Views for KPI dashboards
-│   ├── analytics_views.sql        # Loader for all analytics
-│   ├── vw_waste_by_month.sql     # Monthly waste stats
-│   ├── vw_artisan_leaderboard.sql# Artisan revenue metrics
-│   ├── vw_product_impact_trends.sql
-│   ├── vw_active_subscriptions.sql
-│   └── vw_training_completion.sql
-
-└── seed/                      # 🧪 Sample data
-    └── sample_data.sql        # Initial users, orders, products
-
-
-
-yaml
-Copy
-Edit
-
----
 
 ## 🔍 Platform Capabilities (Powered by Oracle SQL)
 
