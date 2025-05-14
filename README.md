@@ -8,7 +8,7 @@
 
 ## 👨‍💻 My Role: Database Developer
 
-As the **Database Developer**, I re-architected the entire backend data layer in **Oracle SQL**, converting from PostgreSQL while preserving business logic and performance goals.
+As the **Database Developer**, I re-architected the entire backend data layer in **Oracle SQL**, while preserving business logic and performance goals.
 
 ### Key Contributions
 
